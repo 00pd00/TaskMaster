@@ -117,3 +117,11 @@ Once you've followed the installation steps, simply run the app using:
 npm run dev  
 
 Your app will be available at [http://localhost:3000](http://localhost:3000).  
+
+## Deployment
+
+The app has been deployed using **Firebase Hosting** for fast and reliable performance. Firebase provides a secure and scalable way to serve web apps, ensuring quick load times and global availability. 
+
+You can access the live version of the app here:  
+[https://taskmaster-7d072.web.app/](https://taskmaster-7d072.web.app/)
+

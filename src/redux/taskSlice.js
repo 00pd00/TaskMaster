@@ -14,15 +14,19 @@ const taskSlice = createSlice({
     removeTask: (state, action) => {
       state.list = state.list.filter((task) => task.id !== action.payload);
     },
+    editTask: (state, action) => {
+      const { id, updatedTask } = action.payload;
+      const index = state.list.findIndex(task => task.id === id);
+      if (index !== -1) state.list[index] = { ...state.list[index], ...updatedTask };
+    },
+    markAsCompleted: (state, action) => {
+      const index = state.list.findIndex(task => task.id === action.payload);
+      if (index !== -1) state.list[index].status = "Completed";
+    }
   },
 });
 
-export const { addTask, removeTask } = taskSlice.actions;
-
-export const filteredTasks = (state) => {
-  const { list } = state.task || { list: [] };
-  console.log("Task List:", list); 
-  return list;
-};
-
+export const { addTask, removeTask, editTask, markAsCompleted } = taskSlice.actions;
 export default taskSlice.reducer;
+
+
